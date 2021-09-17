@@ -8,6 +8,12 @@ import mongoose from 'mongoose';
 // Model Imports
 import User from './models/userModel.js';
 
+// Controllers Imports
+import deleteUser from './controllers/deleteUser.js';
+import getUsers from './controllers/getUsers.js';
+import putUser from './controllers/putUser.js';
+import postUser from './controllers/postUser.js';
+
 // Starters
 dotenv.config();
 
@@ -37,75 +43,18 @@ mongoose
 app.get('/', (req, res) => res.send('Third exam API is running...'));
 
 // GET all users
-app.get('/api/users', (req, res) =>
-  res.send(User.find({}).then((data) => res.json(data)))
-);
+app.get('/api/users', getUsers);
 
 // POST: create new user
-app.post('/api/users/signup', (req, res) => {
-  // Variables
-  let user = req.body;
-
-  User.find().then((result) => {
-    // Email validation
-    // Variables
-    const userExists = result.some(
-      (userFromDB) => userFromDB.email === user.email
-    );
-
-    // Validation logic
-    if (userExists) {
-      res.json({
-        registrationStatus: 'failed',
-        message: 'User with given email already exists',
-      });
-    } else {
-      const newUser = new User(user);
-
-      newUser.save().then((result) => {
-        res.json({
-          registrationStatus: 'success',
-          message: 'New user created',
-        });
-      });
-    }
-  });
-});
+app.post('/api/users/signup', postUser);
 
 // PUT
 // -- update single user based on ID
-app.put('/api/users/:id', (req, res) => {
-  // -- validation for user inputs
-  if (
-    !req.body.name ||
-    !req.body.age ||
-    !req.body.email ||
-    !req.body.password
-  ) {
-    res.status(400).json({ message: 'All fields are required' });
-    return;
-  }
-  // -- if valdiation passes, updating user
-  let userId = req.params.id;
-
-  User.findByIdAndUpdate(userId, req.body)
-    .then((data) => res.json({ message: 'User updated!' }))
-    .catch((err) => console.log(err));
-
-  res.end();
-});
+app.put('/api/users/:id', putUser);
 
 // DELETE: Delete single user based on it's id
-app.delete('/api/users/delete/:id', async (req, res) => {
-  // Variables
-  const userId = req.params.id;
+app.delete('/api/users/delete/:id', deleteUser);
 
-  const deletedUser = await User.findByIdAndDelete(userId);
-
-  const user = await User.findById(deletedUser.userId);
-
-  res.json({ ...user.toObject() });
-});
 // --------------------------------------------------------------------
 // REST API
 /*
