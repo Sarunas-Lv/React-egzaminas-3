@@ -40,7 +40,11 @@ main .container {
   border-bottom: 1px solid black;
   margin-bottom: 2em;
 }
-/* Users Output Section Style */
+/* Users Output Style */
+.common-parent-div h2 {
+  padding-top: 1em;
+  text-align: center;
+}
 .users-output-section {
   display: flex;
   flex-wrap: wrap;
@@ -48,9 +52,12 @@ main .container {
   align-items: center;
   gap: 2em;
 }
+.users-output-section h2 {
+  text-align: center;
+}
 .users-output-section .user-card {
   width: 300px;
-  height: 150px;
+  height: 170px;
   padding: 15px;
   display: flex;
   flex-direction: column;
@@ -60,14 +67,21 @@ main .container {
     0 0 0 1px rgba(10, 10, 10, 0.02);
 }
 .users-output-section .user-card .user-card-name {
-  font-size: 0.6em;
-  color: rgb(64, 32, 32);
+  font-size: 1.2em;
+  color: brown;
 }
 .users-output-section .user-card .user-card-values {
-  font-size: 0.5em;
+  font-size: 1em;
   color: darkgray;
+  margin: 0;
+  padding: 0;
 }
 .users-output-section .user-card .user-card-id {
-  font-size: 0.5em;
+  font-size: 0.8em;
   color: crimson;
+  margin-bottom: 0.3em;
+}
+.users-output-section .user-card .user-card-button {
+  padding: 0.3em 2em;
+  font-weight: bold;
 }
