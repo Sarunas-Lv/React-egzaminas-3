@@ -17,8 +17,6 @@ const putUser = (req, res) => {
   User.findByIdAndUpdate(userId, req.body)
     .then((data) => res.json({ message: 'User updated!' }))
     .catch((err) => console.log(err));
-
-  res.end();
 };
 
 export default putUser;

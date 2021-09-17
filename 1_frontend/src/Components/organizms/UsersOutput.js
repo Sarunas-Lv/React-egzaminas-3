@@ -8,6 +8,7 @@ const UsersOutput = () => {
   // -- States
   // --- local
   const [users, setUsers] = useState([]);
+  // Effects
   useEffect(() => {
     axios.get('http://localhost:5000/api/users').then((res) => {
       setUsers(res.data);

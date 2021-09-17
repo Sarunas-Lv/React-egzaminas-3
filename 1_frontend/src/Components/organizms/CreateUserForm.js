@@ -14,7 +14,7 @@ const CreateUserForm = () => {
   const [signupConfirmPassword, setSignupConfirmPassword] = useState('');
   const [signupErrorMessage, setSignupErrorMessage] = useState('');
 
-  // -- refs
+  // Refs
   const signupPasswordInputRef = useRef();
   const signupEmailInputRef = useRef();
 
@@ -141,7 +141,7 @@ const CreateUserForm = () => {
             />
           </div>
         </form>
-        <p id='signUpMessage' className='form-message form-message-danger'>
+        <p id='signUpMessage' className='form-message'>
           {signupErrorMessage}
         </p>
       </section>
