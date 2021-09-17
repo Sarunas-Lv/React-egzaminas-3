@@ -31,8 +31,8 @@ Project is created with:
 
 ## Setup
 
-To run this project firstly create .env file in 2_backend folder. There set PORT = 5000 and MONGODB_URI = 'YOUR MONGO DB URI'. Afterwards install project locally using npm.
-Do as stated bellow in chronologic order:
+To run this project firstly create .env file in 2_backend folder. There set PORT = 5000 and MONGODB_URI = 'YOUR MONGO DB URI'. Afterwards install project localy using npm.
+Do as stated bellow in chronological order:
 
 1. Navigate to backend and install npm, then start your backend
 
@@ -57,6 +57,6 @@ GET: /api/users | Get all users
 
 POST: /api/users/signup | Create new user
 
-PUT: /api/users/:id' | Update single car based on
+PUT: /api/users/:id' | Update single car based on id
 
 DELETE: /api/users/delete/:id | Delete single user based on it's id
