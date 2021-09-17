@@ -19,11 +19,22 @@ Project is created with:
 
 ## Setup
 
-To run this project, install it locally using npm:
+To run this project firstly create .env file in 2_backend folder. There set PORT = 5000 and MONGODB_URI = 'YOUR MONGO DB URI'. Afterwards install project locally using npm.
+Do as stated bellow in chronologic order:
+
+1. Navigate to backend and install npm, then start your backend
 
 ```
-$ cd ../lorem
-$ npm install
+$ cd ./2_backend/
+$ npm i
+$ npm run nodemon
+```
+
+2. Navigate back, then navigate to 1_frontend and install npm, now start your frontend
+
+```
+$ cd ./1_frontend/
+$ npm i
 $ npm start
 ```
 
