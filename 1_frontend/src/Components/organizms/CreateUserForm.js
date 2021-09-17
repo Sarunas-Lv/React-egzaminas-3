@@ -5,7 +5,6 @@ import axios from 'axios';
 // Components
 import EmailInput from '../molecules/EmailInput';
 import PasswordInput from '../molecules/PasswordInput';
-import SelectOption from '../molecules/SelectOption';
 import TextInput from '../molecules/TextInput';
 import SumbitMolecule from '../molecules/SumbitMolecule';
 
