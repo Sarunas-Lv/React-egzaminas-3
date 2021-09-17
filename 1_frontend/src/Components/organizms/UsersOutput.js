@@ -22,13 +22,13 @@ const UsersOutput = () => {
     const userId = e.target.value;
     axios
       .delete(DELETE_USER + userId)
-      .then((res) => console.log(res))
+      .then((res) => console.log(res.data.message))
       .catch((err) => console.log(err));
   };
   return (
     <div className='common-parent-div'>
       {' '}
-      <h2>Uers Output</h2>
+      <h2>Visi vartotojai</h2>
       <section className='section-default users-output-section'>
         {users.map((user) => (
           <UserCard user={user} action={deleteUser} />

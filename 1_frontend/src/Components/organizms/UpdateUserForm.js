@@ -1,9 +1,12 @@
 import React from 'react';
 
 const UpdateUserForm = () => {
+  // Hooks
+  // -- States
+  // --- local
   return (
     <div className='common-parent-div'>
-      <h2>Update User Form</h2>
+      <h2>Atnaujinti Vartotoją</h2>
       <section className='section-default'></section>
     </div>
   );
