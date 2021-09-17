@@ -1,6 +1,7 @@
 // Imports
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import UserCard from '../molecules/UserCard';
 
 const UsersOutput = () => {
   // Hooks
@@ -9,7 +10,6 @@ const UsersOutput = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     axios.get('http://localhost:5000/api/users').then((res) => {
-      console.log(res.data);
       setUsers(res.data);
     });
   }, [users]);
@@ -18,28 +18,20 @@ const UsersOutput = () => {
   const DELETE_USER = 'http://localhost:5000/api/users/delete/';
 
   // Custom Functions
+  const deleteUser = (e) => {
+    const userId = e.target.value;
+    axios
+      .delete(DELETE_USER + userId)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
   return (
     <div className='common-parent-div'>
       {' '}
       <h2>Uers Output</h2>
       <section className='section-default users-output-section'>
         {users.map((user) => (
-          <div className='user-card' id={user._id} key={user._id}>
-            <p className='user-card-name'>
-              <b>{user.name}</b>
-            </p>
-            <div className='values-container'>
-              <p className='user-card-values'>Email: {user.email}</p>
-              <p className='user-card-values'>Age: {user.age}</p>
-              <p className='user-card-values'>Password: {user.password}</p>
-            </div>
-            <p className='user-card-id'>
-              _id: <i>{user._id}</i>{' '}
-            </p>
-            <button className='user-card-button' value={user._id}>
-              DELETE USER
-            </button>
-          </div>
+          <UserCard user={user} action={deleteUser} />
         ))}
       </section>
     </div>
