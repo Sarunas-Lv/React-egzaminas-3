@@ -7,7 +7,7 @@
 
 ## General info
 
-This project is simple Lorem ipsum dolor generator.
+This is third day'sof CodeAcademy JavaScript React Exam task . Which test skills of basic backend Node.js and frontend React logic.
 
 ## Technologies
 
@@ -60,4 +60,3 @@ POST: /api/users/signup | Create new user
 PUT: /api/users/:id' | Update single car based on
 
 DELETE: /api/users/delete/:id | Delete single user based on it's id
-cxzcxzczxcxzcxzcxzczxczxczxc

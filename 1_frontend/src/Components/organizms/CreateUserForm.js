@@ -2,6 +2,13 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
 
+// Components
+import EmailInput from '../molecules/EmailInput';
+import PasswordInput from '../molecules/PasswordInput';
+import SelectOption from '../molecules/SelectOption';
+import TextInput from '../molecules/TextInput';
+import SumbitMolecule from '../molecules/SumbitMolecule';
+
 const CreateUserForm = () => {
   // Hooks
   // -- States
@@ -66,80 +73,46 @@ const CreateUserForm = () => {
           className='create-user-form'
           onSubmit={createUser}
         >
-          <div className='form-control'>
-            <label className='form-label' htmlFor='signUpName'>
-              Vardas
-            </label>
-            <input
-              className='form-input'
-              type='text'
-              required
-              value={signupName}
-              onChange={(e) => setSignupName(e.target.value)}
-            />
-          </div>
-
-          <div className='form-control'>
-            <label className='form-label' htmlFor='singUpAge'>
-              Metai
-            </label>
-            <input
-              className='form-input'
-              type='text'
-              required
-              value={singUpAge}
-              onChange={(e) => setSingUpAge(e.target.value)}
-            />
-          </div>
-
-          <div className='form-control'>
-            <label className='form-label' htmlFor='signUpEmail'>
-              El. Paštas
-            </label>
-            <input
-              className='form-input'
-              type='text'
-              required
-              value={signupEmail}
-              onChange={(e) => setSignupEmail(e.target.value)}
-              ref={signupEmailInputRef}
-            />
-          </div>
-
-          <div className='form-control'>
-            <label className='form-label' htmlFor='signUpPassword'>
-              Slaptažodis
-            </label>
-            <input
-              className='form-input'
-              type='password'
-              required
-              value={signupPassword}
-              onChange={(e) => setSignupPassword(e.target.value)}
-              ref={signupPasswordInputRef}
-            />
-          </div>
-
-          <div className='form-control'>
-            <label className='form-label' htmlFor='signUpConfirmPassword'>
-              Pakartoti slaptažodį
-            </label>
-            <input
-              className='form-input'
-              type='password'
-              required
-              value={signupConfirmPassword}
-              onChange={(e) => setSignupConfirmPassword(e.target.value)}
-            />
-          </div>
-
-          <div className='form-control'>
-            <input
-              type='submit'
-              value='SUKURTI VARTOTOJĄ'
-              className='common-button'
-            />
-          </div>
+          <TextInput
+            label='Vardas'
+            stateUpdater={{
+              primaryState: signupName,
+              changeState: setSignupName,
+            }}
+            htmlLabel='setSignupName'
+          />
+          <TextInput
+            label='Metai'
+            stateUpdater={{
+              primaryState: singUpAge,
+              changeState: setSingUpAge,
+            }}
+            htmlLabel='setSingUpAge'
+          />
+          <EmailInput
+            stateUpdater={{
+              primaryState: signupEmail,
+              changeState: setSignupEmail,
+            }}
+            signupEmailInputRef={signupEmailInputRef}
+            htmlLabel='signUpEmail'
+          />
+          <PasswordInput
+            stateUpdater={{
+              primaryState: signupPassword,
+              changeState: setSignupPassword,
+            }}
+            signupPasswordInputRef={signupPasswordInputRef}
+            htmlLabel='signUpPassword'
+          />
+          <PasswordInput
+            stateUpdater={{
+              primaryState: signupConfirmPassword,
+              changeState: setSignupConfirmPassword,
+            }}
+            htmlLabel='signUpConfirmPassword'
+          />
+          <SumbitMolecule value='SUKURTI VARTOTOJĄ' />
         </form>
         <p id='signUpMessage' className='form-message'>
           {signupErrorMessage}
