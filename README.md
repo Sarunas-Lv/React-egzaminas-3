@@ -13,9 +13,21 @@ This project is simple Lorem ipsum dolor generator.
 
 Project is created with:
 
-- Lorem version: 12.3
-- Ipsum version: 2.33
-- Ament library version: 999
+- "colors" version: "^1.4.0",
+- "cors" version: "^2.8.5",
+- "dotenv" version: "^10.0.0",
+- "express" version: "^4.17.1",
+- "mongoose" version: "^6.0.6",
+- "node-fetch" version: "^3.0.0"
+- "node" version : "14.17.5"
+- "@testing-library/jest-dom" version: "^5.14.1",
+- "@testing-library/react" version: "^11.2.7",
+- "@testing-library/user-event" version: "^12.8.3",
+- "axios" version: "^0.21.4",
+- "react" version: "^17.0.2",
+- "react-dom" version: "^17.0.2",
+- "react-scripts" version: "4.0.3",
+- "web-vitals" version: "^1.1.2"
 
 ## Setup
 
@@ -33,6 +45,7 @@ $ npm run nodemon
 2. Navigate back, then navigate to 1_frontend and install npm, now start your frontend
 
 ```
+$ cd ..
 $ cd ./1_frontend/
 $ npm i
 $ npm start
