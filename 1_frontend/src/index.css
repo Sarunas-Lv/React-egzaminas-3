@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* header, footer, main, section styles */
+header,
+footer {
+  background-color: rgb(129, 187, 196);
+  height: 55px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  font-size: 1em;
+  padding: 20px;
+}
+main {
+  min-height: calc(100vh - 110px);
+}
+main .container {
+  margin: 0 auto;
+  width: 900px;
+}
+.section-default {
+  padding: 2em 1em;
+  border-bottom: 1px solid black;
+  margin-bottom: 2em;
+}
+/* Users Output Section Style */
+.users-output-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+.users-output-section .user-card {
+  width: 300px;
+  height: 150px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0 0 1px rgba(10, 10, 10, 0.02);
+}
+.users-output-section .user-card .user-card-name {
+  font-size: 0.6em;
+  color: rgb(64, 32, 32);
+}
+.users-output-section .user-card .user-card-values {
+  font-size: 0.5em;
+  color: darkgray;
+}
+.users-output-section .user-card .user-card-id {
+  font-size: 0.5em;
+  color: crimson;
+}
